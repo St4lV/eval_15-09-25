@@ -5,6 +5,13 @@ $products = getArticles();
 
 require_once "header.php";
 require_once "footer.php";
+
+session_start();
+if (!(isset($_SESSION["email"]) && isset($_SESSION["prenom"]))) {
+    session_unset();
+    session_destroy();
+}
+
 $category="";
 if (isset($_GET["category"])) {
     $category = htmlspecialchars($_GET["category"]);
@@ -13,6 +20,15 @@ if (isset($_GET["category"])) {
 $product="";
 if (isset($_GET["category"])) {
     $product = htmlspecialchars($_GET["product"]);
+}
+
+$result = ["msg" =>""];
+if (isset($_POST["valider"])) {
+    if (!(isset($_SESSION["email"]) && isset($_SESSION["prenom"]))) {
+        header("Location: login.php");
+    } else {
+        $result=addProductToCart($_SESSION["email"],$category,$product);
+    }
 }
 
 $category_exist=false;
@@ -56,6 +72,10 @@ if(!($category_exist && $product_exist)) {
             <img src="<?=getImageFromCDN($act_product['image_url'])?>" alt="<?=$act_product['name']?>">
             <h3><?=$act_product["price"]?>€</h3>
             <p><?=$act_product["description"]?></p>
+            <form action="product_detail.php?category=<?=$category?>&product=<?=$product?>" method="post">
+                <input type="submit" name="valider" value="Ajouter au panier">
+            </form>
+            <p><?=$result["msg"]?></p>
         </div>
     </main>
     

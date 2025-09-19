@@ -7,131 +7,171 @@
 body{
     font-family: sans-serif;
 }
+@media (min-width: 958px) {
+    h1, h2{
+        margin: 10px 0px;
+    }
 
-h1, h2{
-    margin: 10px 0px;
+    hr{
+        width: 100%;
+    }
+    /*///// MAIN /////*/
+
+    main{
+        display: flex;
+        justify-content: center;
+        background-color:beige;
+    }
+
+    #main-comp{
+        width: 90%;
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+    }
+
+    /*///// HEADER /////*/
+
+    header{
+        height: 70px;
+        background-color: blanchedalmond;
+    }
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    .header-container{
+        width: 150px;
+        margin-left: 15px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .bi-basket2-fill{
+        width : 30px;
+        height: auto;
+    }
+
+    .bi-person-circle{
+        width : 30px;
+        height: auto;
+    }
+
+    /*///// FOOTER /////*/
+
+    footer{
+        display: flex;
+        justify-content: space-around;
+        background-color: darkgray;
+        color: white;
+    }
+
+    footer *{
+        color: white;
+    }
+
+    /*///// INDEX.PHP /////*/
+
+    .index-category-products{
+        display: flex;
+        max-width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .index-product-container{
+        border: 1px solid black;
+        padding: 5px 10px;
+        min-width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .index-product-container p{
+        color: black;
+        text-decoration: none;
+    }
+
+    .index-product-img{
+        height: 200px;
+        width : 200px;
+    }
+
+    .index-see-more-products{
+        width : 400px;
+        height: 40px;
+    }
+
+    /*///// LOGIN / REGISTER /////*/
+
+    #connect-form{
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+    }
+    #connect-form div{
+        margin-bottom: 15px;
+    }
+
+    #connect-form div input{
+        width: 100%;
+    }
+
+    .req-red-star{
+        color: red;
+    }
+
+    #switch-login-register{
+        text-align: center;
+    }
+
+    #form-fieldset{
+        padding: 5px 10px;
+        border-radius: 5%;
+        margin-bottom: 15px;
+    }
+
+
+
+
+    /*///// CART /////*/
+
+    #cart-items{
+        width: 100%;
+    }
+    .cart-item-title{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cart-item-title form input{
+        padding: 4px 8px;
+    }
+
+    .cart-item-container{
+        display: flex;
+        max-height: 100px;
+        justify-content: space-between;
+    }
+
+    .cart-item-img{
+        height: 100px;
+        width : auto;
+    }
+
+    .cart-item-desc{
+        max-width: 60%;
+        max-height: 90px;
+        overflow: hidden;
+    }
 }
 
-hr{
-    width: 100%;
-}
-/*///// MAIN /////*/
+@media (max-width: 957px) {
 
-main{
-    display: flex;
-    justify-content: center;
-    background-color:beige;
-}
-
-#main-comp{
-    width: 90%;
-    min-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-}
-
-/*///// HEADER /////*/
-header{
-    height: 70px;
-    background-color: blanchedalmond;
-}
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-
-.header-container{
-    width: 150px;
-    margin-left: 15px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.bi-basket2-fill{
-    width : 30px;
-    height: auto;
-}
-
-.bi-person-circle{
-    width : 30px;
-    height: auto;
-}
-
-/*///// FOOTER /////*/
-
-footer{
-    display: flex;
-    justify-content: space-around;
-    background-color: darkgray;
-    color: white;
-}
-
-footer *{
-    color: white;
-}
-
-/*///// INDEX.PHP /////*/
-
-.index-category-products{
-    display: flex;
-    max-width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-}
-
-.index-product-container{
-    border: 1px solid black;
-    padding: 5px 10px;
-    min-width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.index-product-container p{
-    color: black;
-    text-decoration: none;
-}
-
-.index-product-img{
-    height: 200px;
-    width : 200px;
-}
-
-.index-see-more-products{
-    width : 400px;
-    height: 40px;
-}
-
-/*///// LOGIN / REGISTER /////*/
-
-#connect-form{
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
-}
-#connect-form div{
-    margin-bottom: 15px;
-}
-
-#connect-form div input{
-    width: 100%;
-}
-
-.req-red-star{
-    color: red;
-}
-
-#switch-login-register{
-    text-align: center;
-}
-
-#form-fieldset{
-    padding: 5px 10px;
-    border-radius: 5%;
-    margin-bottom: 15px;
 }
