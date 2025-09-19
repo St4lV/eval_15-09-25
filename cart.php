@@ -64,9 +64,7 @@ $cart = getOrderFromUser( $_SESSION["email"]);
                 }
             ?>
             <h2>Total : <?=$cart["order"]["total_amount"]?> €</h2>
-            <form method="post" action="checkout.php">
-                <input type="submit" name="valider" value="Procéder au paiement">
-            </form>
+            <h3><a href="/checkout.php">Procéder au paiement</a></h3>
             </fieldset><?php } else { ?>
                 <h2>Le panier est vide</h2>
                 <a href="/products.php">Ajouter des articles</a>

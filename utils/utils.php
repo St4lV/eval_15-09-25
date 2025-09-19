@@ -250,7 +250,10 @@ function getOrderFromUser($email) {
     $user = getUserFromEmail($email);
     $requete_orders = $connexion->prepare("SELECT * FROM orders WHERE user_id = ? AND status = 'pending'");
     $requete_orders->execute([$user["id"]]);
-    $order = ($requete_orders->fetchAll(PDO::FETCH_ASSOC))[0];
+    $order = $requete_orders->fetch(PDO::FETCH_ASSOC) ?: null;
+    if (!$order){
+        return ["order"=>[],"items"=>[]];
+    }
 
     $requete_order_items = $connexion->prepare("SELECT * FROM order_items WHERE order_id = ?");
     $requete_order_items->execute([$order["id"]]);
