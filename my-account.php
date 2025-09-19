@@ -15,7 +15,7 @@ if (!(isset($_SESSION["email"]) && isset($_SESSION["prenom"]))) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon panier</title>
+    <title>Mon compte</title>
     <meta name="description" content="Site e commerce fictif dans le cadre de l'evaluation backend Ifocop de la formation DIW. "/>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -23,7 +23,11 @@ if (!(isset($_SESSION["email"]) && isset($_SESSION["prenom"]))) {
     <?=displayHeader();?>
     <main>
         <div id="main-comp">
-            <h1>Mon panier</h1>
+            <h1>Mon compte</h1>
+            <hr>
+            <h2>Bienvenue <?=$_SESSION["prenom"]?></h2>
+            <p><a href="/cart.php">Mon panier</a></p>
+            <p><a href="/logout.php">Déconnexion</a></p>
         </div>
     </main>
     

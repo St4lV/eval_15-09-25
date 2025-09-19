@@ -5,7 +5,7 @@ function displayHeader(){
     <header>
         <nav>
             <div class="header-container">
-                <a href="index.php">Acceuil</a>
+                <a href="index.php">Accueil</a>
                 <a href="products.php">Produits</a>
             </div>
             <div class="header-container">

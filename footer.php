@@ -18,7 +18,7 @@ function displayFooter(){
             <li>Site réalisé par Liam L.B</li>
             <li>
                 <ul>
-                    <li><a href="https://github.com/St4lV">Github</a></li>
+                    <li><a href="https://github.com/St4lV/eval_15-09-25">Github</a></li>
                 </ul>
             </li>
     </ul>

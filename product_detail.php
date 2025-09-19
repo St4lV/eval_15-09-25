@@ -44,7 +44,7 @@ if(!($category_exist && $product_exist)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?=$act_product["name"]?></title>
     <meta name="description" content="Site e commerce fictif dans le cadre de l'evaluation backend Ifocop de la formation DIW. "/>
     <link rel="stylesheet" href="css/styles.css">
 </head>

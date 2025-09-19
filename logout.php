@@ -1,4 +1,6 @@
 <?php
-require_once "utils/utils.php";
-require_once "header.php";
-require_once "footer.php";
+
+session_start();
+session_unset();
+session_destroy();
+header("Location: index.php");
