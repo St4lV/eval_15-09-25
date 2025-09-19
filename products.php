@@ -24,7 +24,7 @@ if (isset($_GET["filter"])) {
     <main>
         <div id="main-comp">
             <label for="product-search">Chercher un produit :</label>
-            <input name="product-search" type="search" value="<?=$filter?>">
+            <input name="product-search" type="search" value="<?=$filter?>" id="product-search">
         <?php
         function categoryObj($c_a){
             $articles = [];
@@ -36,13 +36,13 @@ if (isset($_GET["filter"])) {
             }
         ?>
             <h2><?=$c_a["category_name"]?></h2>
-            <article class="index-category-products">
+            <article class="product-page-category-products">
         <?php
             foreach($articles as $i) {
         ?>
-                <a class="index-product-container" href="/product_detail.php?category=<?=$c_a["category_name"]?>&product=<?=$i["name"]?>">
+                <a class="product-page-product-container product-filter" href="/product_detail.php?category=<?=$c_a["category_name"]?>&product=<?=$i["name"]?>" data-filter="<?=$c_a["category_name"]."-".$i["name"]?>">
                     <h3><?=$i["name"]?></h3>
-                    <img class="index-product-img" src="<?=getImageFromCDN($i['image_url'])?>" alt="<?=$i['name']?>">
+                    <img class="product-page-product-img" src="<?=getImageFromCDN($i['image_url'])?>" alt="<?=$i['name']?>">
                     <p><?=$i["price"]?>€</p>
                 </a>
         <?php
@@ -53,18 +53,33 @@ if (isset($_GET["filter"])) {
         }
 
         foreach ($categories as $i){
-            if ($filter == ""){
-                categoryObj($i);
-            } else {
-                if ($filter == $i["category_name"]){
-                    categoryObj($i);
-                }
-            }
+            categoryObj($i);
         }
         ?>
         </div>
     </main>
     <?=displayFooter();?>
     <script src="javascript/index.js"></script>
+    <script>
+        const filter_input = document.querySelector("#product-search");
+        checkFilter(filter_input.value.toLowerCase());
+        filter_input.addEventListener('input', function() {
+            checkFilter(filter_input.value.toLowerCase());
+        });
+        function checkFilter(filter_val){
+            filter = filter_val
+            const filterable_list = document.querySelectorAll(".product-filter");
+
+            filterable_list.forEach(item => {
+                console.log(item.dataset.filter)
+                const data = item.dataset.filter.toLowerCase();
+                if (data.includes(filter)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
