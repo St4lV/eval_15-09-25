@@ -29,7 +29,6 @@
                         array_push( $articles, $j );
                     }
                 }
-                //var_dump($articles);
                 ?>
                 <h2><?=$i["category_name"]?></h2>
                 <div class="index-category-products">

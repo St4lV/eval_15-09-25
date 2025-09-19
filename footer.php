@@ -21,6 +21,7 @@ function displayFooter(){
                     <li><a href="https://github.com/St4lV/eval_15-09-25">Github</a></li>
                 </ul>
             </li>
+            <li>Projet fictif à but éducatif. Tout usage des images non libre de droit ne porte aucun préjudice et ne saurait nuir à leur propriétaire.</li>
     </ul>
     </footer>
     <?php
